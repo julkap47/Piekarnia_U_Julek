@@ -80,9 +80,36 @@
                         <label for="product-1">Produkt:</label>
                         <select id="product-1" name="products[]" required>
                             <option value="" disabled selected>Wybierz produkt</option>
-                            <option value="Chleb">Chleb - 5 PLN</option>
-                            <option value="Drożdżówka">Drożdżówka - 3 PLN</option>
-                            <option value="Ciasteczka">Ciasteczka - 10 PLN</option>
+                            <option value="Drożdżówka">Drożdżówka z serem - 5 PLN</option>
+                            <option value="Drożdżówka">Drożdżówka z marmoladą - 5 PLN</option>
+                            <option value="Drożdżówka">Drożdżówka z czekoladą - 5 PLN</option>
+                            <option value="Drożdżówka">Drożdżówka z czekoladą - 5 PLN</option>
+                            <option value="Drożdżówka">Drożdżówka z budyniem - 5 PLN</option>
+                            <option value="Drożdżówka">Drożdżówka z kruszonką - 5 PLN</option>
+                            <option value="Ciasta">Brownie - 30 PLN</option>
+                            <option value="Ciasta">Tiramisu - 30 PLN</option>
+                            <option value="Ciasta">Makowiec - 30 PLN</option>
+                            <option value="Ciasta">Sernik - 30 PLN</option>
+                            <option value="Ciasta">Piernik - 30 PLN</option>
+                            <option value="Ciasta">Szarlotka - 30 PLN</option>
+                            <option value="Ciasteczka">Chocolate chip - 3 PLN</option>
+                            <option value="Ciasteczka">Owsiane z rodzynkami - 3 PLN</option>
+                            <option value="Ciasteczka">Maślane - 3 PLN</option>
+                            <option value="Ciasteczka">Snickerdoodles - 3 PLN</option>
+                            <option value="Ciasteczka">Pierniczki - 3 PLN</option>
+                            <option value="Ciasteczka">Makaroniki- 3 PLN</option>
+                            <option value="Chleb">Chleb pszenny - 8 PLN</option>
+                            <option value="Chleb">Chleb razowy - 8 PLN</option>
+                            <option value="Chleb">Chleb IG - 8 PLN</option>
+                            <option value="Chleb">Chleb bez glutenu - 8 PLN</option>
+                            <option value="Chleb">Chleb z suszonymi pomidorami- 8 PLN</option>
+                            <option value="Chleb">Chleb fitness - 8 PLN</option>
+                            <option value="Bułka">Bułka pszenna - 2 PLN</option>
+                            <option value="Bułka">Bułka razowa- 2 PLN</option>
+                            <option value="Bułka">Bułka z serem - 2 PLN</option>
+                            <option value="Bułka">Bułka bez glutenu - 2 PLN</option>
+                            <option value="Bułka">Bułka fitness - 2 PLN</option>
+                            <option value="Bułka">Bułka z pestkami dyni- 2 PLN</option>
                         </select>
                         <label for="quantity-1">Ilość:</label>
                         <input type="number" id="quantity-1" name="quantities[]" min="1" value="1" required>
@@ -96,7 +123,7 @@
                 <legend>Zgody:</legend>
                 <div class="zgody">
                     <label>
-                        Akceptuję <a href="#regulamin" target="_blank">regulamin</a> składania zamówień.
+                        Akceptuję <a href="#regulamin" target="_blank"> regulamin </a> składania zamówień.
                         <input type="checkbox" name="terms" required>
                     </label>
                     <label>
@@ -184,7 +211,9 @@
         </footer>
         </html>
      <script >
-    $(document).ready(function () {
+
+
+$(document).ready(function () {
     // Dodawanie produktu do listy
     $('#add-product').on('click', function () {
         const selectedProduct = $('#product-1 option:selected').text(); // Pobranie wybranego produktu
@@ -206,7 +235,7 @@
 
     // Wyświetlanie podsumowania
     $('#summary-button').on('click', function () {
-        let summaryHTML = '<h3>Podsumowanie zamówienia:</h3><ul id="lista">';
+        let summaryHTML = '<h3>Podsumowanie zamówienia:</h3><ul>';
 
         // Pobranie wybranej lokalizacji
         const location = $("input[name='location']:checked").val();
@@ -220,19 +249,17 @@
         summaryHTML += `<li><strong>Email:</strong> ${email || 'Nie podano'}</li>`;
         summaryHTML += `<li><strong>Telefon:</strong> ${phone || 'Nie podano'}</li>`;
 
-        // Pobranie produktów i ilości
-        const products = $("select[name='products[]']");
-        const quantities = $("input[name='quantities[]']");
+        // Pobranie produktów i ilości z listy
+        const productItems = $('#lista li');
         let total = 0;
 
-        products.each(function (index) {
-            if ($(this).val()) {
-                const productName = $(this).find('option:selected').text();
-                const quantity = $(quantities[index]).val();
-                const price = parseInt(productName.split(" - ")[1].replace(" PLN", ""));
-                total += price * quantity;
-                summaryHTML += `<li><strong>Produkt:</strong> ${productName} <strong>Ilość:</strong> ${quantity}</li>`;
-            }
+        productItems.each(function () {
+            const itemText = $(this).text();
+            const quantity = parseInt(itemText.split(' x ')[0]);
+            const productName = itemText.split(' x ')[1].split(' - ')[0];
+            const price = parseFloat(itemText.split(' - ')[1].replace(' PLN', ''));
+            total += price * quantity;
+            summaryHTML += `<li><strong>Produkt:</strong> ${productName} <strong>Ilość:</strong> ${quantity}</li>`;
         });
 
         // Zgody
@@ -244,7 +271,7 @@
         summaryHTML += `<li><strong>Wiadomości marketingowe:</strong> ${marketing}</li>`;
 
         // Łączna kwota
-        summaryHTML += `<li><strong>Łączna kwota:</strong> ${total} PLN</li>`;
+        summaryHTML += `<li><strong>Łączna kwota:</strong> ${total.toFixed(2)} PLN</li>`;
 
         // Zakończenie podsumowania
         summaryHTML += '</ul>';
@@ -259,10 +286,23 @@
     // Zamknięcie podsumowania
     $('#close').on('click', function () {
         $('#summary').removeClass('show');
+        $('#summary-content').html(''); // Resetowanie zawartości podsumowania
+    });
+
+    // Walidacja formularza i wysłanie
+    $('#order-form').on('submit', function (event) {
+        event.preventDefault(); // Zapobiega domyślnemu wysłaniu formularza
+
+        // Sprawdzenie, czy lista produktów nie jest pusta
+        if ($('#lista li').length === 0) {
+            alert('Musisz dodać przynajmniej jeden produkt do zamówienia.');
+            return;
+        }
+
+        // Jeśli wszystko jest OK, wyślij formularz
+        this.submit();
     });
 });
-
-
 
      </script>
 </body>

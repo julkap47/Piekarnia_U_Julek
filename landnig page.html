@@ -5,6 +5,7 @@
     <link rel ="stylesheet" href="styl-landingpage.css">
     <link rel ="stylesheet" href="styl-all.css">
     <title>Piekarnia u Julek</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
     <header>
@@ -122,60 +123,55 @@
 </footer>
     <script>
         const images = ["img/chlebek.jpg", "img/ciasto.jpg", "img/pszenna.jpg", "img/ciastko.jpg", "img/zytnia.jpg"];
-        let i = 0;
+let i = 0;
 
-        function addImage(){
-            const gallery =document.getElementById("gallery"); //tworzymy obiekt który bedzie potrzbeny do wstawiania w miejsce gallery
-            const img = new Image();
-            img.setAttribute("src", images[i]); /// img.src=images[i] to jest dokładnie to samo 
+function addImage(){
+    const gallery = document.getElementById("gallery");
+    const img = new Image();
+    img.setAttribute("src", images[i]);
 
-            img.addEventListener('load', () =>{
-                gallery.innerHTML = "";  // czyści poprzednie zdjęcie 
-                gallery.appendChild(img);
-                updateDots();
-            } );
+    img.addEventListener('load', () =>{
+        gallery.innerHTML = "";
+        gallery.appendChild(img);
+        updateDots(); // Aktualizuj kropeczki po załadowaniu obrazka
+    });
 
-            //gdyby coś poszło nie tak :)
-            img.addEventListener('error', ()=>{
-                gallery.innerHTML = "";
-                const error = document.createElement('p');
-                error.textContent = "Błąd wczytywania obrazka";
-                gallery.appendChild(error);
-            });
+    img.addEventListener('error', ()=>{
+        gallery.innerHTML = "";
+        const error = document.createElement('p');
+        error.textContent = "Błąd wczytywania obrazka";
+        gallery.appendChild(error);
+    });
+}
 
-            i = (i + 1) % images.length; // sprawdzamy czy indeks nie wychodzi poza długość tablicy
-        }
-
-        function prevImage() {
-    i = (i - 1 + images.length) % images.length; // Adjust logic to handle the "previous" image in sequence
+function prevImage() {
+    i = (i - 1 + images.length) % images.length;
     addImage();
 }
-        function nextImage() {
-            i = (i + 1) % images.length; // Przejdź do następnego obrazka
-            addImage();
-        }
 
-// Tworzy kropeczki na podstawie liczby zdjęć
+function nextImage() {
+    i = (i + 1) % images.length;
+    addImage();
+}
+
 function createDots() {
     const dotsContainer = document.getElementById('dots-container');
-    dotsContainer.innerHTML = ""; // Czyść poprzednie kropeczki
+    dotsContainer.innerHTML = "";
 
     images.forEach((_, index) => {
         const dot = document.createElement('div');
         dot.className = 'dot';
-        if (index === i) dot.classList.add('active'); // Podświetl aktualną kropkę
+        if (index === i) dot.classList.add('active');
 
-        // Przypisz zdarzenie kliknięcia do każdej kropki
         dot.addEventListener('click', () => {
-            i = index; // Ustaw indeks na klikniętą kropkę
-            addImage(); // Wyświetl odpowiadający obraz
+            i = index;
+            addImage();
         });
 
         dotsContainer.appendChild(dot);
     });
 }
 
-// Aktualizuje podświetlenie kropeczek
 function updateDots() {
     const dots = document.querySelectorAll('.dot');
     dots.forEach((dot, index) => {
@@ -187,14 +183,9 @@ function updateDots() {
     });
 }
 
-// Inicjalizacja galerii
 createDots();
-
-// Uruchomienie galerii
-        addImage();
-        setInterval(nextImage, 10000); // Automatyczna zmiana obrazka co 4 sekundy
-
-        
+addImage();
+setInterval(nextImage, 10000);
     </script>
 
 
