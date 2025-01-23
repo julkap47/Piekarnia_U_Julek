@@ -30,8 +30,9 @@
     display: none;
     width: 90%;
     padding: 20px;
-    border: 1px solid  #f1f1f1; /* Obramowanie panelu */
-    background-color:  #f1f1f1; /* Jasnoszare tło panelu */
+    border: 1px solid  #F3E9DC; /* Obramowanie panelu */
+    background-color:  #F3E9DC; /* Jasnoszare tło panelu */
+    color: black;
     margin-top: 0;
     margin-left: 30px;
     margin-right: 5px;
@@ -41,11 +42,12 @@
     display: flex;
     justify-content: space-between; /* Tekst po lewej, przycisk po prawej */
     align-items: center; /* Wyśrodkowanie pionowe */
-    background-color: #F3E9DC; /* Kolor tła nagłówka */
-    color: #000;
+    background-color:#5d432f; /* Kolor tła nagłówka */
+    color: white;
     padding: 0px 30px;
     border-radius: 5px;
     margin-bottom: 0;
+    font-size: larger;
     margin-top: 20px;
 }
 
@@ -53,9 +55,60 @@
 
     background: none;
     border: none;
-    color: #000;
+    color: white;
     font-size: 30px;
     cursor: pointer;
+}
+
+#nasi-piekarze {
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-size: larger;
+}
+
+.piekarze-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.piekarz {
+    flex: 1;
+    max-width: 45%;
+    background-color: #F3E9DC;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.piekarz img {
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.piekarz h4 {
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    color: #5d432f;
+}
+
+.piekarz ul {
+    list-style-type: none;
+    padding: 0;
+    color: black;
+}
+
+.piekarz ul li {
+    margin-bottom: 10px;
+    font-size: larger
 }
 
 @media (max-width: 768px) {
@@ -63,6 +116,14 @@
     .container {
         flex-direction: column;
     }
+    .piekarze-container {
+        flex-direction: column;
+    }
+
+    .piekarz {
+        max-width: 100%;
+    }
+    
 }
 
 

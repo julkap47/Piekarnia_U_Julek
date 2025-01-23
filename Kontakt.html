@@ -79,24 +79,43 @@
     <section>
         <div class="FAQ">
         <h3>FAQ</h3>
-    <div class="nagłówek"><p class="tytł">Text</p><button class="hideButton">+</button></div>
-    <p class="notatka">Zadanie polega na ukrywaniu i pokazywaniu określonej treści dzięki dołączonemu przyciskowi. W
-        przykładzie wykorzystano m.in. metodę slideToggle() oraz zdarzenie click().</p>
+    <div class="nagłówek"><p class="tytł">Jakie są godziny otwarcia Piekarni u Julek?</p><button class="hideButton">+</button></div>
+    <p class="notatka">Nasze piekarnie są otwarte od poniedziałku do piątku w godzinach od 7:00 do 19:00, 
+        a w soboty od 8:00 do 15:00. W niedziele jesteśmy zamknięci.
+    </p>
 
-    <div class="nagłówek"><p class="tytł">Text</p><button class="hideButton">+</button></div>
-    <p class="notatka">Zadanie polega na ukrywaniu i pokazywaniu określonej treści dzięki dołączonemu przyciskowi. W
-        przykładzie wykorzystano m.in. metodę slideToggle() oraz zdarzenie click().</p>
+    <div class="nagłówek"><p class="tytł">Czy piekarnia oferuje produkty bezglutenowe?</p><button class="hideButton">+</button></div>
+    <p class="notatka">Tak, w naszej ofercie posiadamy również produkty bezglutenowe, które są przygotowywane z najwyższą starannością, 
+        aby zapewnić bezpieczeństwo dla osób z nietolerancją glutenu.</p>
 
-    <div class="nagłówek"><p class="tytł">Text</p><button class="hideButton">+</button></div>
-    <p class="notatka">Zadanie polega na ukrywaniu i pokazywaniu określonej treści dzięki dołączonemu przyciskowi. W
-        przykładzie wykorzystano m.in. metodę slideToggle() oraz zdarzenie click().</p>
+    <div class="nagłówek"><p class="tytł">Czy można zamówić produkty online?</p><button class="hideButton">+</button></div>
+    <p class="notatka">Oczywiście! Oferujemy możliwość zamówienia naszych wyrobów przez naszą stronę internetową. 
+        Wystarczy przejść do zakładki "Zamów online", wybrać produkty i złożyć zamówienie.</p>
         
 
-    <div class="nagłówek"><p class="tytł">Text</p><button class="hideButton">+</button></div>
-    <p class="notatka">Zadanie polega na ukrywaniu i pokazywaniu określonej treści dzięki dołączonemu przyciskowi. W
-        przykładzie wykorzystano m.in. metodę slideToggle() oraz zdarzenie click().</p>
+    <div class="nagłówek"><p class="tytł">Czy piekarnia przyjmuje zamówienia na specjalne okazje?</p><button class="hideButton">+</button></div>
+    <p class="notatka">Tak, przyjmujemy zamówienia na różnego rodzaju okazje, takie jak urodziny, wesela, czy inne imprezy okolicznościowe. 
+        Prosimy o kontakt z nami z odpowiednim wyprzedzeniem, abyśmy mogli przygotować dla Państwa wyjątkowe wypieki.</p>
         </div>
-    </section>    
+    </section> 
+
+    <section id="wspolpraca">
+        <div class="container">
+            <h3>Współpraca</h3>
+            <p>Jesteśmy otwarci na różnego rodzaju współprace. Nasza piekarnia z chęcią podejmuje nowe wyzwania i aktywnie 
+                poszukuje możliwości współpracy z innymi firmami, instytucjami oraz organizacjami. Jeśli prowadzisz restaurację, 
+                kawiarnię, hotel lub inną działalność gastronomiczną i chciałbyś wprowadzić nasze wypieki do swojej oferty, 
+                serdecznie zapraszamy do kontaktu. skontaktuj się z nami poprzez poniższy formularz.</p>
+            <form id="contact-form">
+                <label for="email">Twój adres email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Twoja wiadomość:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <button type="submit">Wyślij</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
         <div class="footer-container">
             <div class="footer-column">
@@ -172,7 +191,7 @@
 
 var map = L.map('map', {
     center: [50.06143, 19.93658], // Kraków jako centrum
-    zoom: 13, // Początkowe przybliżenie
+    zoom: 10, // Początkowe przybliżenie
     minZoom: 12, // Minimalne przybliżenie
     maxBounds: [ // Granice mapy
         [49.9, 19.7], 
@@ -186,8 +205,16 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Dodaj znacznik (opcjonalnie)
 L.marker([50.06143, 19.93658]).addTo(map)
-    .bindPopup('Piekarnia u Julek - Stare Miasto')
+    .bindPopup('Piekarnia u Julek - Stare Miasto<br>ul. Floriańska 5, 31-019 Kraków')
     .openPopup();
+L.marker([50.052671, 19.948109]).addTo(map)
+    .bindPopup('Piekarnia u Julek - Kazimierz<br>ul. Szeroka 10, 31-053 Kraków')
+    .openPopup();
+ L.marker([50.075154, 20.036950 ]).addTo(map)
+    .bindPopup('Piekarnia u Julek - Nowa Huta<br>os. Centrum C 5, 31-931 Kraków')
+    .openPopup();   
+
+
 
 
      </script>
