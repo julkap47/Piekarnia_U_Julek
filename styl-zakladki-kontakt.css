@@ -1,0 +1,107 @@
+
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.kontener-mapy{
+    flex: 1; /* Mapka zajmuje przestrzeń obok tekstu */
+    border-radius: 10px;    
+    margin-left: 20px;
+    margin-top: 30px;
+
+}
+
+#text-box {
+    flex: 1;
+    padding: 20px;
+    text-align: justify;
+    font-size: larger;
+    margin-right: 20px;
+}
+
+#text-box h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #D2B48C;
+}
+
+.lokale {
+    background-color: #473323;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #D2B48C; /* Granice między lokalami */
+    border-radius: 5px;
+}
+
+.lokale h4 {
+    font-size: 20px;
+    margin-top: 0;
+    color: #D2B48C;
+}
+
+.lokale p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: #FFF5E1;
+}
+
+#map {
+    height: 500px; /* Ustal wysokość mapy */
+    width: 100%; /* Dostosuj do szerokości kontenera */
+    background-color: #3C2F2F; /* Opcjonalny kolor tła */
+    border-radius: 10px; /* Zaokrąglone rogi */
+    padding: 0; /* Usuń padding – mapa nie powinna mieć wewnętrznych marginesów */
+}
+
+.notatka {
+    display: none;
+    width: 90%;
+    padding: 20px;
+    border: 1px solid #f1f1f1; /* Obramowanie panelu */
+    background-color: #f1f1f1; /* Jasnoszare tło panelu */
+    margin-top: 0;
+    margin-left: 30px;
+    margin-right: 5px;
+}
+
+.nagłówek {
+    display: flex;
+    justify-content: space-between; /* Tekst po lewej, przycisk po prawej */
+    align-items: center; /* Wyśrodkowanie pionowe */
+    background-color: #F3E9DC; /* Kolor tła nagłówka */
+    color: #000;
+    padding: 0px 30px;
+    border-radius: 5px;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.hideButton {
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    #text-box {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}

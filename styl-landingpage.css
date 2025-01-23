@@ -1,0 +1,159 @@
+
+/* Sekcja slidera */
+#gallery {
+    position: relative;
+    width: 100%;
+    /*max-width: 600px;*/
+    margin: auto;
+    text-align: center;
+    object-fit: cover;
+}
+
+#gallery img {
+
+    display: block;
+    width: 100%;
+    max-height: 480px;
+    height: auto;
+    object-fit: cover;
+}
+
+
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    /*max-width: 600px;*/
+    max-height: 480px;
+    margin: auto;
+    margin-top: 15px;
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-grow: 1; /* Kropeczki zajmują przestrzeń między strzałkami */
+    margin: 0 10px;
+}
+
+.arrow {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #F3E9DC;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+
+.arrow:hover {
+    color: #2E2B26;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #BBB;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #F0BB78; /* Aktywna kropka w kolorze złota */
+}
+
+
+/* Sekcje strony */
+section {
+    margin: auto;
+    padding: 10px;
+    max-height: fit-content;
+    text-align: center;
+}
+
+
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+
+#text-box {
+    flex: 1;
+    padding: 50px;
+    text-align: justify;
+    font-size: larger;
+    
+}
+
+#text-box a {
+    color: #F0BB78; /* Przykład zmiany koloru tekstu linku */
+    text-decoration: underline; /* Przykład podkreślenia linku */
+}
+
+#image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+#image-box img {
+    max-width: 80%;
+    max-height: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.order-button-2 {
+    display: block;
+    width: 80%; /* Szerokość przycisku */
+    background-color: #876245; /* Kolor tła, dostosuj wg potrzeb */
+    color: white; /* Kolor tekstu */
+    text-decoration: none; /* Usunięcie podkreślenia */
+    text-align: center; /* Wyśrodkowanie tekstu */
+    padding: 15px; /* Odstępy wewnętrzne */
+    border-radius: 5px; /* Zaokrąglone rogi, opcjonalnie */
+    font-size: 28px; 
+}
+.order-container_2{
+
+    display: flex;
+    justify-content: center; /* Centrowanie w poziomie */
+    align-items: center; 
+}
+
+.order-button-2:hover {
+    background-color: #5d432f; /* Kolor tła, dostosuj wg potrzeb */
+}
+
+
+/* Responsywność */
+@media (max-width: 768px) {
+  
+    #gallery {
+        width: 100%;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+}
