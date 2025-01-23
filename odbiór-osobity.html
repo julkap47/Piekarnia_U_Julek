@@ -123,11 +123,11 @@
                 <legend>Zgody:</legend>
                 <div class="zgody">
                     <label>
-                        Akceptuję <a href="#regulamin" target="_blank"> regulamin </a> składania zamówień.
+                        Akceptuję&nbsp;<a href="#regulamin" target="_blank">regulamin</a> &nbsp;składania zamówień.
                         <input type="checkbox" name="terms" required>
                     </label>
                     <label>
-                        Akceptuję <a href="#polityka-prywatnosci" target="_blank">politykę prywatności</a>.
+                        Akceptuję&nbsp;<a href="#polityka-prywatnosci" target="_blank">politykę prywatności</a>.
                         <input type="checkbox" name="privacy" required>
                     </label>
                     <label>
@@ -271,7 +271,7 @@ $(document).ready(function () {
         summaryHTML += `<li><strong>Wiadomości marketingowe:</strong> ${marketing}</li>`;
 
         // Łączna kwota
-        summaryHTML += `<li><strong>Łączna kwota:</strong> ${total.toFixed(2)} PLN</li>`;
+        summaryHTML += `<li class="total-price"><strong>Łączna kwota:</strong> ${total.toFixed(2)} PLN</li>`;
 
         // Zakończenie podsumowania
         summaryHTML += '</ul>';

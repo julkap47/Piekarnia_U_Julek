@@ -44,25 +44,23 @@ form label {
 
 .lokalizacja input[type="radio"] {
     cursor: pointer;
-    
+    height: 10px;
+    width: 10px;
+    margin-right: 30px;
     margin-top: 5px;
+    
 }
-.lokalizacja input[type="radio"]:checked {
-    background-color: #413ac9; /* Zmienia tło po zaznaczeniu */
-    border-color: #030418; /* Zmienia obramowanie po zaznaczeniu */
-}
+
 .zgody {
     display: flex; 
     flex-direction: column; 
     margin-left: 25px;
     margin-top: 20px;
-    white-space: nowrap;
 }
 
 .zgody label {
     display: flex; 
     justify-content: space-between; 
-    align-items: left; 
     width: 100%;
     margin-bottom: 10px;
 }
@@ -70,6 +68,8 @@ form label {
 .zgody input[type="checkbox"] {
     cursor: pointer; 
     margin-left: auto;
+    height: 15px;
+    width: 15px;
 }
 
 .zgody a {
@@ -152,10 +152,12 @@ button.remove-item {
 
 /* Chmurka / modal */
 .summary {
-    position: fixed;
-    top: 20%;
+    position: absolute;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
+    max-width: 90%;
+    height: 80%;
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5%;
@@ -164,6 +166,35 @@ button.remove-item {
     z-index: 999;
     display: none;
     opacity: 0;
+}
+
+
+.summary ul {
+    list-style-type: none; /* Usuń punkty listy */
+    padding: 0;            /* Usuń wewnętrzne odstępy */
+    margin: 0;             /* Usuń zewnętrzne odstępy */
+}
+
+.summary li {
+    padding: 8px 0;        /* Odstęp między elementami */
+    border-bottom: 1px solid #eee; /* Linie oddzielające */
+}
+
+.summary li:last-child {
+    border-bottom: none;   /* Usuń linię na ostatnim elemencie */
+}
+
+.summary strong {
+    color: #333;           /* Wyróżnij tekst */
+    font-weight: 600;
+}
+
+.total-price {
+    font-size: 1.2em;      /* Powiększ czcionkę */
+    font-weight: bold;     /* Wyróżnij tekst */
+    color: #4caf50;        /* Kolor akcentu */
+    text-align: right;     /* Wyrównaj do prawej */
+    margin-top: 10px;
 }
 
 .summary.show {
@@ -193,4 +224,46 @@ button[type="submit"] {
     width: 100%;
     height: 40px;
     margin-top: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+    #order-form {
+        width: 90%; /* Szerokość formularza zmniejsza się na urządzeniach mobilnych */
+        margin-left: 5%;
+        padding: 20px;
+    }
+
+    form input, form select {
+        width: 100%; /* Wszystkie pola formularza mają 100% szerokości */
+    }
+
+    /* Dopasowanie lokalizacji (radio buttons) */
+    .lokalizacja {
+        margin-top: 10px;
+    }
+
+    /* Zgody */
+    .zgody {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    /* Lista produktów */
+    #lista li {
+        font-size: 14px; /* Zmniejszenie czcionki na mniejszych ekranach */
+    }
+
+    /* Zmniejszenie rozmiaru przycisków na mobilnych ekranach */
+    #add-product, button[type="submit"] {
+        width: 100%; /* Przyciski zajmują całą szerokość formularza */
+        padding: 15px;
+    }
+
+    /* Modal (chmurka) */
+    .summary {
+        width: 90%; /* Zmniejszenie szerokości modal na małych ekranach */
+        padding: 10px;
+    }
 }

@@ -50,11 +50,11 @@ nav a.active {
        .submenu {
         width: 100%; 
         z-index: 1001;
+        white-space: nowrap;
     }
     
     nav a.active{
         max-width: 80%;
-        flex-wrap: nowrap;
         padding: 0% 5%;
     }
 }

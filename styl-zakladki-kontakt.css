@@ -1,25 +1,36 @@
 
 .godziny {
+    display: flex;
+    flex-direction: row;
     text-align: center; /* Wyśrodkowanie tekstu */
-    margin-top: 50px;
+    justify-content: center;
+    margin-top: 10px;
 }
 
 .godziny p {
     font-size: 25px; /* Większy rozmiar czcionki */
+    white-space: wrap;
 }
 
-.container {
+.container_lokale {
     display: flex;
-    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     width: 100%;
     max-width: 1200px;
-    margin: 50px auto;
-    padding: 10px;
     align-items: center;
     border-radius: 10px;
-    margin-top: 30px;
+    margin:2% auto;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    align-items: center;
+    border-radius: 10px;
+    margin:35px;
 }
 
 .kontener-mapy{
@@ -32,7 +43,6 @@
 
 #text-box {
     flex: 1;
-    padding: 20px;
     text-align: justify;
     font-size: larger;
     margin-right: 20px;
@@ -83,8 +93,9 @@
     background-color:  #F3E9DC; /* Jasnoszare tło panelu */
     color: black;
     margin-top: 0;
-    margin-left: 30px;
-    margin-right: 5px;
+    margin-left: 2%;
+    margin-right: 15%;
+    flex-wrap: wrap;
 }
 
 .nagłówek{
@@ -172,13 +183,77 @@
     background-color: #b89474;
 }
 
+.FAQ{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+#FAQ-nagłówek{
+    margin-left: 5%;
+}
+
 @media (max-width: 768px) {
-    .container {
+    .container_lokale {
         flex-direction: column;
+
+    }
+    .lokale{
+        width: 100%;
+    }
+    .notatka{
+        margin: 0 auto;
+    }
+    #text-box{
+        padding:0;
+        margin: 0;
+        width: fit-content;
+        flex: auto;
     }
 
-    #text-box {
-        margin-right: 0;
-        margin-bottom: 20px;
+    .kontener-mapy {
+        margin: 20px 0;
+        width: 90%;
+    }
+
+    #map {
+        height: 300px; /* Zmniejszenie mapy na mniejszych ekranach */
+    }
+
+    .godziny {
+        display: flex;
+        flex-direction: column; 
+        justify-content:center;  
+        align-items: flex-start;  
+    }
+
+    .godziny p{
+        margin-left: 5%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .FAQ {
+        margin: 0 5%;
+    }
+
+    #FAQ-nagłówek {
+        margin: 0;
+        text-align: center;
+    }
+
+   
+
+    #wspolpraca {
+        margin: 20px 5%;
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    #contact-form {
+        width: 100%;
+    }
+
+    #contact-form button {
+        align-self: center;
     }
 }
