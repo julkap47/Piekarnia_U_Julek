@@ -1,0 +1,192 @@
+
+#order-form{
+    justify-content: center;
+    background-color: rgb(236, 143, 22);
+    height: fit-content;
+    width: 60%;
+    border-radius: 5px;
+    padding: 50px;
+    margin-top: 5%;
+    margin-left: 20%;
+    align-items: center;
+    box-sizing: border-box;
+
+
+}
+
+form fieldset {
+    border: none;
+    margin-bottom: 20px;
+}
+
+form legend {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.lokalizacja {
+    display:flex; /* Ustawia elementy w jednej linii */ 
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    white-space: nowrap;
+}
+
+.lokalizacja input[type="radio"] {
+    cursor: pointer;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+.lokalizacja input[type="radio"]:checked {
+    background-color: #413ac9; /* Zmienia tło po zaznaczeniu */
+    border-color: #030418; /* Zmienia obramowanie po zaznaczeniu */
+}
+.zgody {
+    display: flex; 
+    flex-direction: column; 
+    margin-left: 25px;
+    margin-top: 20px;
+    white-space: nowrap;
+}
+
+.zgody label {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.zgody input[type="checkbox"] {
+    cursor: pointer; 
+    margin-left: auto;
+}
+
+.zgody a {
+    color: #007bff; 
+    text-decoration: none; 
+}
+
+.zgody a:hover {
+    text-decoration: underline; 
+}
+
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-product {
+    background-color: #3C2F2F;
+    color: #FFF5E1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#add-product:hover {
+    background-color: #5C4B4B;
+}
+
+button.remove-item {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+
+#lista {
+    list-style-type: none; 
+    padding: 0;
+    margin: 20px 0;
+}
+#lista li {
+    margin: 5px 0;
+    background: #fff;
+    padding: 5px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#summary-button{
+    
+    background-color: #3C2F2F;
+    color: #FFF5E1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+}
+
+#summary-button:hover{
+    background-color: #5C4B4B;
+
+}
+
+/* Chmurka / modal */
+.summary {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: none;
+    opacity: 0;
+}
+
+.summary.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Przyciski w modal */
+button.close {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+
+
+
+button[type="submit"] {
+    background-color: #3C2F2F;
+    color: #FFF5E1;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}

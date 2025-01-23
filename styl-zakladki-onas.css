@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+   
+}
+
+#text-box {
+    flex: 1;
+    padding: 20px;
+    text-align: justify;
+    font-size: larger;
+}
+
+#image-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+#image-box img {
+    max-width: 80%;
+    max-height: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.notatka{
+    display: none;
+    width: 90%;
+    padding: 20px;
+    border: 1px solid  #f1f1f1; /* Obramowanie panelu */
+    background-color:  #f1f1f1; /* Jasnoszare tło panelu */
+    margin-top: 0;
+    margin-left: 30px;
+    margin-right: 5px;
+}
+
+.nagłówek{
+    display: flex;
+    justify-content: space-between; /* Tekst po lewej, przycisk po prawej */
+    align-items: center; /* Wyśrodkowanie pionowe */
+    background-color: #F3E9DC; /* Kolor tła nagłówka */
+    color: #000;
+    padding: 0px 30px;
+    border-radius: 5px;
+    margin-bottom: 0;
+    margin-top: 20px;
+}
+
+.hideButton{
+
+    background: none;
+    border: none;
+    color: #000;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  
+    .container {
+        flex-direction: column;
+    }
+}
+
+

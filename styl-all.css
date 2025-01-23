@@ -1,0 +1,299 @@
+/* Reset stylów */
+body, h3, h4, nav a, footer, section, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ogólne style */
+body {
+    font-family: 'Forum';
+    background-color: #0f0d0b; /* Ciemne tło */
+    color: #DCD7C9; /* Jasny kolor tekstu */
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Nagłówek Piekarnia u Julek*/
+header {
+    background-color:#0f0d0b; 
+    color: #DCD7C9; 
+    padding: 10px 200px;
+    text-align: left
+}
+
+header h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Menu */
+.menu_bar {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #5d432f;
+    /*background-color: #543A14;*/
+    height: 8vh; /* wysokość jako procent widoku */
+    padding-left: 5%;
+    position: sticky;
+    z-index: 1000;
+    top: 20px;
+    margin-bottom: 30px;
+    
+}
+.menu-links{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-grow: 1;
+}
+
+
+/* Hamburger menu */
+.menu-toggle {
+    display: none; 
+}
+
+.hamburger {
+    display: none; /* Domyślnie ukryta na dużych ekranach */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #F3E9DC;
+    border-radius: 5px;
+}
+
+/*Domek*/
+.Start {
+    margin-top: 5px;
+    height: 35px;
+    width: 35x;
+} 
+
+/*poszczegolne kategorie z menu*/
+nav a {
+    color: #F3E9DC;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 1.25rem;
+    
+}
+
+nav a:hover {
+    color:  #c78b5b; 
+}
+
+
+
+
+/*Zamów online*/
+
+.order-container{
+    height: 250vh;
+    width: 40vh;
+    background-color:#876245;
+    color: #161b1d;
+    border-radius: 50%;
+    text-align: center; 
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transform: translateX(10%);
+
+}
+
+.order-wrapper {
+    height: 8vh; /* Dopasowanie do wysokości menu_bar */
+    overflow: hidden; /* Ukrycie nadmiaru order-container */
+    display: flex;
+    align-items: center;
+}
+
+/* LOGO */
+.logo-container {
+    width: 15vh; /* szerokość 15% ekranu w poziomie */
+    height: 15vh; /* wysokość dopasowana do szerokości */
+    max-width: 140px;
+    max-height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: #543A14;
+    margin-left: -20px;
+    display: flex;
+    z-index: 1000;
+}
+.logo {
+    width: 100%; /* zajmuje 50% średnicy kontenera */
+    height: 100%;
+    object-fit: cover;
+}
+
+footer {
+    margin-top: 40px;
+    background-color: #333;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    color: #fff; /* Kolor tekstu na biały */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Wyrównanie kolumn do środka */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center; /* Tekst wyrównany do środka */
+}
+
+.footer-column {
+    flex: 1 1 45%; /* Szerokość kolumn */
+    margin: 0 20px; /* Równy margines po bokach */
+    min-width: 250px;
+}
+
+.footer-column h4 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color:  #F0BB78;;
+}
+
+.footer-column h5 {
+    font-size: 1em;
+    margin-bottom: 2px; /* Zmniejszony margines */
+    color:  #F0BB78;;
+}
+
+.footer-column ul, .footer-column p {
+    font-size: 0.9em;
+    line-height: 1.5;
+    list-style-type: none; /* Usunięto kropki z list */
+    padding: 0;
+}
+
+.footer-column a {
+    color: #fff; /* Kolor odnośników taki sam jak kolor tekstu */
+    text-decoration: none; /* Usunięto podkreślenia */
+}
+
+.footer-column a:hover {
+    text-decoration: none;
+}
+
+.footer-subcolumn {
+    margin-bottom: 20px;
+}
+
+.footer-subcolumn ul {
+    font-size: 1em; /* Powiększony rozmiar tekstu */
+}
+
+.sub-list {
+    padding-left: 20px; /* Wcięcie przy podproduktach */
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.8em;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+}
+
+
+/* Responsywność */
+@media (max-width: 768px) {
+    .footer-column {
+        flex: 1 1 100%;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-locations,
+    .footer-menu {
+        margin: 10px 0;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-menu,
+    .footer-locations {
+        margin: 10px 0;
+    }
+
+     .menu-links {
+        display: none;
+        flex-direction: column; /* Menu w pionie */
+        position: absolute; 
+        top: 6vh; 
+        left: 0;
+        right: 0;
+        background-color: #5d432f; 
+        padding: 20px 0; 
+        z-index: 999;
+        max-height: 70vh; 
+        gap: 10px;
+        overflow-y: auto;
+        margin-left: auto;
+        width: 40%;
+        margin-right: 2%;
+        overflow: hidden;
+        border-radius: 5%;
+        
+
+
+    }
+
+    .order-container{
+        border-radius: 0%;   
+        transform: none;
+    }
+    
+    header{
+        padding: 10px 0;
+        display: flex;
+        justify-content: center;
+        margin-left: 0;
+    }
+    
+    
+    /* Pokaż hamburgera */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Pokazanie menu po kliknięciu */
+    .menu-toggle:checked ~ .menu-links {
+        display: flex;
+    }
+
+    /* zmiana na x*/
+    .menu-toggle:checked + .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px); 
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle:checked + .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(12px, -12px); 
+    }
+}

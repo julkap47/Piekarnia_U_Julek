@@ -1,0 +1,60 @@
+
+
+nav a.active {
+    background-color:#F0BB78;
+    height: 8vh;
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    padding: 10px 20px;
+}
+/*           WYROBY            */
+/* Podmenu */
+.submenu {
+    display: none;
+    background-color: #543A14;
+    position: absolute;
+    top: 8vh; /* Zmiana pozycji na odpowiednią */
+    left: 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    z-index: 500;
+    
+}
+
+.submenu a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #F3E9DC;
+    font-size: 1rem;
+}
+
+.submenu a:hover {
+    background-color: #F0BB78;
+}
+#wyroby-cukiernicze:hover + #submenu-cukiernicze {
+    display: block;
+}
+
+#wyroby-piearnicze:hover + #submenu-piekarnicze {
+    display: block;
+}
+
+
+
+/* Responsywność */
+@media (max-width: 768px) {
+       .submenu {
+        width: 100%; 
+        z-index: 1001;
+    }
+    
+    nav a.active{
+        max-width: 80%;
+        flex-wrap: nowrap;
+        padding: 0% 5%;
+    }
+}

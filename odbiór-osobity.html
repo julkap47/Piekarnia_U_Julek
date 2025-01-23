@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <link rel ="stylesheet" href="styl-zakladki-onas.css">
+    <link rel ="stylesheet" href="styl-all.css">
+    <link rel ="stylesheet" href="odbiór-osobisty.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Piekarnia u Julek</title>
+</head>
+<body>
+    <header>
+        <h3>Piekarnia u Julek</h3>
+    </header>
+
+    <nav class="menu_bar">
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo Piekarni" class="logo">
+        </div>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <div class="menu-links">
+        <a href="landnig page.html" ><img src="start.png" alt="Start" class="Start"></a>
+        <a href="o nas.html" class="active">O nas</a>
+        <a href="Drożdżówki.html">Wyroby Cukiernicze</a>
+        <a href="Chleby.html">Wyroby Piekarnicze</a>
+        <a href="Kontakt.html">Kontakt</a>
+        <div class="order-wrapper">
+        <div class="order-container">
+            <a href="Zamowienia.html" class="order-button">Zamów online</a>
+        </div>
+    </div>
+    </div>
+    </nav>
+
+    <main>
+        <form id="order-form">
+            <!-- Wybór lokalizacji -->
+            <fieldset>
+                <legend>Wybierz lokalizację:</legend>
+                <div class="lokalizacja">
+                    <label>
+                        <input type="radio" name="location" value="Stare Miasto" required>
+                        Piekarnia u Julek - Stare Miasto
+                    </label>
+                    <label>
+                        <input type="radio" name="location" value="Kazimierz">
+                        Piekarnia u Julek - Kazimierz
+                    </label>
+                    <label>
+                        <input type="radio" name="location" value="Nowa Huta">
+                        Piekarnia u Julek - Nowa Huta
+                    </label>
+                </div>
+            </fieldset>
+
+            <!-- Dane klienta -->
+            <fieldset>
+                <legend>Twoje dane:</legend>
+                <label for="name">Imię i nazwisko:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Adres e-mail:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="phone">Numer telefonu:</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" required>
+            </fieldset>
+
+            <!-- Produkty -->
+            <fieldset>
+                <legend>Dodaj produkty:</legend>
+                <div id="product-list">
+                    <div class="product-item">
+                        <ul id="lista"></ul>
+                        <label for="product-1">Produkt:</label>
+                        <select id="product-1" name="products[]" required>
+                            <option value="" disabled selected>Wybierz produkt</option>
+                            <option value="Chleb">Chleb - 5 PLN</option>
+                            <option value="Drożdżówka">Drożdżówka - 3 PLN</option>
+                            <option value="Ciasteczka">Ciasteczka - 10 PLN</option>
+                        </select>
+                        <label for="quantity-1">Ilość:</label>
+                        <input type="number" id="quantity-1" name="quantities[]" min="1" value="1" required>
+                    </div>
+                </div>
+                <button type="button" id="add-product">Dodaj kolejny produkt</button>
+            </fieldset>
+
+            <!-- Zgody -->
+            <fieldset>
+                <legend>Zgody:</legend>
+                <div class="zgody">
+                    <label>
+                        Akceptuję <a href="#regulamin" target="_blank">regulamin</a> składania zamówień.
+                        <input type="checkbox" name="terms" required>
+                    </label>
+                    <label>
+                        Akceptuję <a href="#polityka-prywatnosci" target="_blank">politykę prywatności</a>.
+                        <input type="checkbox" name="privacy" required>
+                    </label>
+                    <label>
+                        Chcę otrzymywać wiadomości marketingowe.
+                        <input type="checkbox" name="marketing">
+                    </label>
+                </div>
+            </fieldset>
+            
+
+            <!-- Podsumowanie i wysyłka -->
+            <button type="button" id="summary-button">Podsumowanie</button>
+
+            <!-- Ukryte podsumowanie -->
+            <div id="summary" class="summary hidden">
+                <h2>Podsumowanie zamówienia</h2>
+                <div id="summary-content"></div>
+                <button id="close" class="close">Zamknij</button>
+            </div>
+            
+            <button type="submit">Złóż zamówienie</button>
+        </form>
+    </main>
+</body>
+
+        
+
+        <footer>
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h4>Nasze lokale</h4>
+                    <div class="lokal">
+                        <h5>Piekarnia u Julek - Stare Miasto</h5>
+                        <p>Adres: ul. Floriańska 5, 31-019 Kraków<br>
+                        Telefon: +48 123 456 789<br>
+                        Email: staremiasto@piekarniaujulek.pl</p>
+                    </div>
+                    <div class="lokal">
+                        <h5>Piekarnia u Julek - Kazimierz</h5>
+                        <p>Adres: ul. Szeroka 10, 31-053 Kraków<br>
+                        Telefon: +48 987 654 321<br>
+                        Email: kazimierz@piekarniaujulek.pl</p>
+                    </div>
+                    <div class="lokal">
+                        <h5>Piekarnia u Julek - Nowa Huta</h5>
+                        <p>Adres: os. Centrum C 5, 31-931 Kraków<br>
+                        Telefon: +48 321 654 987<br>
+                        Email: nowahuta@piekarniaujulek.pl</p>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <div class="footer-subcolumn">
+                        <h4>Produkty</h4>
+                        <ul>
+                            <li>Wyroby piekarnicze</li>
+                            <ul class="sub-list">
+                                <li><a href="Chleby.html">Chleb</a></li>
+                                <li><a href="Bułki.html">Bułki</a></li>
+                            </ul>
+                            <li style="margin-top: 10px;">Wyroby cukiernicze</li>
+                            <ul class="sub-list">
+                                <li><a href="Drożdżówki.html">Drożdżówki</a></li>
+                                <li><a href="Ciasta.html">Ciasta</a></li>
+                                <li><a href="Ciasteczka.html">Ciasteczka</a></li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <div class="footer-subcolumn">
+                        <h4>Nasza piekarnia</h4>
+                        <ul>
+                            <li><a href="o nas.html">O nas</a></li>
+                            <li><a href="Kontakt.html">Kontakt</a></li>
+                            <li><a href="#regulamin">Regulamin zamówień online</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Piekarnia u Julek. Wszystkie prawa zastrzeżone.</p>
+            </div>
+        </footer>
+        </html>
+     <script >
+    $(document).ready(function () {
+    // Dodawanie produktu do listy
+    $('#add-product').on('click', function () {
+        const selectedProduct = $('#product-1 option:selected').text(); // Pobranie wybranego produktu
+        const quantity = $('#quantity-1').val(); // Pobranie ilości
+        if (selectedProduct && quantity > 0) {
+            $('#lista').append(`<li>${quantity} x ${selectedProduct} <button class="remove-item">Usuń</button></li>`);
+            // Resetowanie pól
+            $('#product-1').val('');
+            $('#quantity-1').val('1');
+        } else {
+            alert('Wybierz produkt i podaj ilość!');
+        }
+    });
+
+    // Usuwanie produktu z listy
+    $('#lista').on('click', '.remove-item', function () {
+        $(this).closest('li').remove(); // Usuwa rodzica (element li)
+    });
+
+    // Wyświetlanie podsumowania
+    $('#summary-button').on('click', function () {
+        let summaryHTML = '<h3>Podsumowanie zamówienia:</h3><ul id="lista">';
+
+        // Pobranie wybranej lokalizacji
+        const location = $("input[name='location']:checked").val();
+        summaryHTML += `<li><strong>Lokalizacja:</strong> ${location || 'Nie wybrano'}</li>`;
+
+        // Pobranie danych klienta
+        const name = $('#name').val();
+        const email = $('#email').val();
+        const phone = $('#phone').val();
+        summaryHTML += `<li><strong>Imię i nazwisko:</strong> ${name || 'Nie podano'}</li>`;
+        summaryHTML += `<li><strong>Email:</strong> ${email || 'Nie podano'}</li>`;
+        summaryHTML += `<li><strong>Telefon:</strong> ${phone || 'Nie podano'}</li>`;
+
+        // Pobranie produktów i ilości
+        const products = $("select[name='products[]']");
+        const quantities = $("input[name='quantities[]']");
+        let total = 0;
+
+        products.each(function (index) {
+            if ($(this).val()) {
+                const productName = $(this).find('option:selected').text();
+                const quantity = $(quantities[index]).val();
+                const price = parseInt(productName.split(" - ")[1].replace(" PLN", ""));
+                total += price * quantity;
+                summaryHTML += `<li><strong>Produkt:</strong> ${productName} <strong>Ilość:</strong> ${quantity}</li>`;
+            }
+        });
+
+        // Zgody
+        const terms = $("input[name='terms']").is(":checked") ? "Tak" : "Nie";
+        const privacy = $("input[name='privacy']").is(":checked") ? "Tak" : "Nie";
+        const marketing = $("input[name='marketing']").is(":checked") ? "Tak" : "Nie";
+        summaryHTML += `<li><strong>Regulamin:</strong> ${terms}</li>`;
+        summaryHTML += `<li><strong>Polityka prywatności:</strong> ${privacy}</li>`;
+        summaryHTML += `<li><strong>Wiadomości marketingowe:</strong> ${marketing}</li>`;
+
+        // Łączna kwota
+        summaryHTML += `<li><strong>Łączna kwota:</strong> ${total} PLN</li>`;
+
+        // Zakończenie podsumowania
+        summaryHTML += '</ul>';
+
+        // Wstawienie podsumowania do modal
+        $('#summary-content').html(summaryHTML);
+
+        // Pokaż modal
+        $('#summary').addClass('show');
+    });
+
+    // Zamknięcie podsumowania
+    $('#close').on('click', function () {
+        $('#summary').removeClass('show');
+    });
+});
+
+
+
+     </script>
+</body>
+</html>
