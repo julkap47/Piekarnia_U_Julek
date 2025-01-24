@@ -112,6 +112,11 @@
     font-size: larger
 }
 
+.onas{
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
 @media (max-width: 768px) {
   
     .container {
@@ -123,6 +128,13 @@
 
     .piekarz {
         max-width: 100%;
+    }
+    .notatka{
+        padding:20px;
+        margin-left: 2%;
+        margin-right: 2%;
+        width: fit-content;
+        flex: auto;
     }
     
 }

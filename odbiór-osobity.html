@@ -25,13 +25,13 @@
     </label>
     <div class="menu-links">
         <a href="landnig page.html" ><img src="start.png" alt="Start" class="Start"></a>
-        <a href="o nas.html" class="active">O nas</a>
+        <a href="o nas.html" >O nas</a>
         <a href="Drożdżówki.html">Wyroby Cukiernicze</a>
         <a href="Chleby.html">Wyroby Piekarnicze</a>
         <a href="Kontakt.html">Kontakt</a>
         <div class="order-wrapper">
         <div class="order-container">
-            <a href="Zamowienia.html" class="order-button">Zamów online</a>
+            <a href="Zamowienia.html" class="active">Zamów online</a>
         </div>
     </div>
     </div>
@@ -78,7 +78,7 @@
                     <div class="product-item">
                         <ul id="lista"></ul>
                         <label for="product-1">Produkt:</label>
-                        <select id="product-1" name="products[]" required>
+                        <select id="product-1" name="products[]" >
                             <option value="" disabled selected>Wybierz produkt</option>
                             <option value="Drożdżówka">Drożdżówka z serem - 5 PLN</option>
                             <option value="Drożdżówka">Drożdżówka z marmoladą - 5 PLN</option>
@@ -97,19 +97,19 @@
                             <option value="Ciasteczka">Maślane - 3 PLN</option>
                             <option value="Ciasteczka">Snickerdoodles - 3 PLN</option>
                             <option value="Ciasteczka">Pierniczki - 3 PLN</option>
-                            <option value="Ciasteczka">Makaroniki- 3 PLN</option>
+                            <option value="Ciasteczka">Makaroniki - 3 PLN</option>
                             <option value="Chleb">Chleb pszenny - 8 PLN</option>
                             <option value="Chleb">Chleb razowy - 8 PLN</option>
                             <option value="Chleb">Chleb IG - 8 PLN</option>
                             <option value="Chleb">Chleb bez glutenu - 8 PLN</option>
-                            <option value="Chleb">Chleb z suszonymi pomidorami- 8 PLN</option>
+                            <option value="Chleb">Chleb z suszonymi pomidorami - 8 PLN</option>
                             <option value="Chleb">Chleb fitness - 8 PLN</option>
                             <option value="Bułka">Bułka pszenna - 2 PLN</option>
-                            <option value="Bułka">Bułka razowa- 2 PLN</option>
+                            <option value="Bułka">Bułka razowa - 2 PLN</option>
                             <option value="Bułka">Bułka z serem - 2 PLN</option>
                             <option value="Bułka">Bułka bez glutenu - 2 PLN</option>
                             <option value="Bułka">Bułka fitness - 2 PLN</option>
-                            <option value="Bułka">Bułka z pestkami dyni- 2 PLN</option>
+                            <option value="Bułka">Bułka z pestkami dyni - 2 PLN</option>
                         </select>
                         <label for="quantity-1">Ilość:</label>
                         <input type="number" id="quantity-1" name="quantities[]" min="1" value="1" required>
@@ -123,11 +123,11 @@
                 <legend>Zgody:</legend>
                 <div class="zgody">
                     <label>
-                        Akceptuję&nbsp;<a href="#regulamin" target="_blank">regulamin</a> &nbsp;składania zamówień.
+                        Akceptuję&nbsp;<a href="regulamin.html" target="_blank">regulamin</a> &nbsp;składania zamówień.
                         <input type="checkbox" name="terms" required>
                     </label>
                     <label>
-                        Akceptuję&nbsp;<a href="#polityka-prywatnosci" target="_blank">politykę prywatności</a>.
+                        Akceptuję&nbsp;<a href="polityka_prywatnosci.html" target="_blank">politykę prywatności</a>.
                         <input type="checkbox" name="privacy" required>
                     </label>
                     <label>
@@ -136,20 +136,25 @@
                     </label>
                 </div>
             </fieldset>
-            
-
-            <!-- Podsumowanie i wysyłka -->
             <button type="button" id="summary-button">Podsumowanie</button>
+
+
+            <button type="submit">Złóż zamówienie</button>
+
+            
+        <div id="email-sent-message" class="hidden">Dziękujemy za zamówienie! Podsumowanie zamówienia zostało wysłane na Twój e-mail.</div>
+
+        </form>
+            <!-- Podsumowanie i wysyłka -->
 
             <!-- Ukryte podsumowanie -->
             <div id="summary" class="summary hidden">
-                <h2>Podsumowanie zamówienia</h2>
                 <div id="summary-content"></div>
                 <button id="close" class="close">Zamknij</button>
             </div>
             
-            <button type="submit">Złóż zamówienie</button>
-        </form>
+        
+    
     </main>
 </body>
 
@@ -200,7 +205,7 @@
                         <ul>
                             <li><a href="o nas.html">O nas</a></li>
                             <li><a href="Kontakt.html">Kontakt</a></li>
-                            <li><a href="#regulamin">Regulamin zamówień online</a></li>
+                            <li><a href="regulamin.html">Regulamin zamówień online</a></li>
                         </ul>
                     </div>
                 </div>
@@ -235,7 +240,7 @@ $(document).ready(function () {
 
     // Wyświetlanie podsumowania
     $('#summary-button').on('click', function () {
-        let summaryHTML = '<h3>Podsumowanie zamówienia:</h3><ul>';
+        let summaryHTML = '<h2>Podsumowanie zamówienia:</h2><ul>';
 
         // Pobranie wybranej lokalizacji
         const location = $("input[name='location']:checked").val();
@@ -282,26 +287,36 @@ $(document).ready(function () {
         // Pokaż modal
         $('#summary').addClass('show');
     });
-
     // Zamknięcie podsumowania
     $('#close').on('click', function () {
         $('#summary').removeClass('show');
-        $('#summary-content').html(''); // Resetowanie zawartości podsumowania
     });
+    
 
-    // Walidacja formularza i wysłanie
-    $('#order-form').on('submit', function (event) {
-        event.preventDefault(); // Zapobiega domyślnemu wysłaniu formularza
+   // Obsługa przycisku "Złóż zamówienie"
+$('#order-form').on('submit', function (event) {
+    event.preventDefault(); 
+    // Sprawdzenie, czy lista produktów nie jest pusta
+    if ($('#lista li').length === 0) {
+        alert('Musisz dodać przynajmniej jeden produkt do zamówienia.');
+        return;
+    }
 
-        // Sprawdzenie, czy lista produktów nie jest pusta
-        if ($('#lista li').length === 0) {
-            alert('Musisz dodać przynajmniej jeden produkt do zamówienia.');
-            return;
-        }
+    // Pokaż komunikat o wysłaniu na e-mail
+    const emailMessage = $('#email-sent-message');
+    emailMessage.removeClass('hidden').addClass('show'); // Dodaj klasę, aby komunikat się pojawił
 
-        // Jeśli wszystko jest OK, wyślij formularz
-        this.submit();
-    });
+    // Ukryj komunikat po 3 sekundach
+    setTimeout(function () {
+        emailMessage.removeClass('show').addClass('hidden');
+    }, 4000);
+
+    this.reset(); // Resetuje wszystkie pola formularza
+    $('#lista').empty(); 
+    // Możesz dodać logikę do wysłania formularza tutaj
+    // this.submit(); // Wyślij formularz, jeśli ma to być prawdziwe wysyłanie
+});
+
 });
 
      </script>

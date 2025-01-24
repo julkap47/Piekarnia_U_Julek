@@ -26,11 +26,8 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
     align-items: center;
     border-radius: 10px;
-    margin:35px;
 }
 
 .kontener-mapy{
@@ -46,6 +43,7 @@
     text-align: justify;
     font-size: larger;
     margin-right: 20px;
+    width: fit-content;
 }
 
 #text-box h3 {
@@ -122,12 +120,12 @@
 
 /* Stylizacja sekcji współpracy */
 #wspolpraca {
-    padding: 20px;
+    padding: 5%;
     background-color: #F3E9DC;
     border-radius: 10px;
-    margin: 50px 0;
-
-}
+    margin-left: 2%;
+    margin-right: 2%;
+margin-top: 5%;}
 
 #wspolpraca h3 {
     color: #5d432f;
@@ -192,6 +190,7 @@
 }
 
 @media (max-width: 768px) {
+
     .container_lokale {
         flex-direction: column;
 
@@ -199,15 +198,18 @@
     .lokale{
         width: 100%;
     }
+
     .notatka{
-        margin: 0 auto;
-    }
-    #text-box{
-        padding:0;
-        margin: 0;
+        padding:20px;
+        margin-left: 2%;
+        margin-right: 2%;
         width: fit-content;
         flex: auto;
     }
+   #text-box{
+    width: 80%;
+    margin-left: -3%;
+   }
 
     .kontener-mapy {
         margin: 20px 0;
@@ -230,17 +232,6 @@
         margin-top: 0;
         margin-bottom: 0;
     }
-
-    .FAQ {
-        margin: 0 5%;
-    }
-
-    #FAQ-nagłówek {
-        margin: 0;
-        text-align: center;
-    }
-
-   
 
     #wspolpraca {
         margin: 20px 5%;

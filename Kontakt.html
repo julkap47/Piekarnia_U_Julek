@@ -33,10 +33,10 @@
     </label>
     <div class="menu-links">
         <a href="landnig page.html" ><img src="start.png" alt="Start" class="Start"></a>
-        <a href="o nas.html" class="active">O nas</a>
+        <a href="o nas.html" >O nas</a>
         <a href="Drożdżówki.html">Wyroby Cukiernicze</a>
         <a href="Chleby.html">Wyroby Piekarnicze</a>
-        <a href="Kontakt.html">Kontakt</a>
+        <a href="Kontakt.html" class="active">Kontakt</a>
         <div class="order-wrapper">
         <div class="order-container">
             <a href="Zamowienia.html" class="order-button">Zamów online</a>
@@ -170,7 +170,7 @@
                     <ul>
                         <li><a href="o nas.html">O nas</a></li>
                         <li><a href="Kontakt.html">Kontakt</a></li>
-                        <li><a href="#regulamin">Regulamin zamówień online</a></li>
+                        <li><a href="regulamin.html">Regulamin zamówień online</a></li>
                     </ul>
                 </div>
             </div>
@@ -212,8 +212,8 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-// Dodaj znacznik (opcjonalnie)
-L.marker([50.06143, 19.93658]).addTo(map)
+// punkty
+L.marker([ 50.064167, 19.940833 ]).addTo(map)
     .bindPopup('Piekarnia u Julek - Stare Miasto<br>ul. Floriańska 5, 31-019 Kraków')
     .openPopup();
 L.marker([50.052671, 19.948109]).addTo(map)
