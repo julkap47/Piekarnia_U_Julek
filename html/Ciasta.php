@@ -1,44 +1,8 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styl-all.css">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <link rel="stylesheet" href="styl-produkty.css">
-    <title>Piekarnia u Julek</title>
-</head>
-<body>
-    <header>
-        <h3>Piekarnia u Julek</h3>
-    </header>
 
-    <nav class="menu_bar">
-        <div class="logo-container">
-            <img src="logo.png" alt="Logo Piekarni" class="logo">
-        </div>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="hamburger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </label>
-        <div class="menu-links">
-            <a href="landnig page.html"><img src="start.png" alt="Start" class="Start"></a>
-            <a href="o nas.html">O nas</a>
-            <a href="Drożdżówki.html" >Wyroby Cukiernicze</a>
-            <a href="Chleby.html" class="active">Wyroby Piekarnicze</a>
-            <a href="Kontakt.html">Kontakt</a>
-            <div class="order-wrapper">
-                <div class="order-container">
-                    <a href="Zamowienia.html" class="order-button">Zamów online</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
     <!-- Dodaj linki na górze przed produktami -->
     <section class="link-section">
-        <p><a href="Chleby.html">Chleby</a> | <a href="Bułki.html" class="active">Bułki</a> </p>
+        <p><a href="Drozdzowki">Drożdżówki</a> | <a href="Ciasta">Ciasta</a> | <a href="Ciasteczka">Ciasteczka</a></p>
     </section>
 
     <section class="product-section">
@@ -47,31 +11,11 @@
             <article class="product">
                 <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
                 <div class="product-info">
-                    <p class="product-name">Bułka pszenna<br>
+                    <p class="product-name">Brownie<br>
                         <label for="sklad-checkbox" class="sklad-label">Skład</label>
                         <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
                     </p>        
-                    <p class="product-price">2 zł</p>
-                </div>
-            </article>
-            <div id="sklad" class="sklad hidden">
-                <div class="sklad-content">
-                    <h2>Skład produktu</h2>
-                    <p>Mąka, woda</p>
-                    <button id="close" class="close">Zamknij</button>
-                </div>
-            </div>
-        
-        
-            <!-- Produkty -->
-            <article class="product">
-                <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
-                <div class="product-info">
-                    <p class="product-name">Bułka z serem<br>
-                        <label for="sklad-checkbox" class="sklad-label">Skład</label>
-                        <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
-                    </p>        
-                    <p class="product-price">2 zł</p>
+                    <p class="product-price">30 zł</p>
                 </div>
             </article>
             <div id="sklad" class="sklad hidden">
@@ -87,11 +31,31 @@
             <article class="product">
                 <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
                 <div class="product-info">
-                    <p class="product-name">Bułka razowa<br>
+                    <p class="product-name">Tiramisu<br>
                         <label for="sklad-checkbox" class="sklad-label">Skład</label>
                         <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
                     </p>        
-                    <p class="product-price">2 zł</p>
+                    <p class="product-price">30 zł</p>
+                </div>
+            </article>
+            <div id="sklad" class="sklad hidden">
+                <div class="sklad-content">
+                    <h2>Skład produktu</h2>
+                    <p>Mąka, ser biały, cukier, drożdże, mleko...</p>
+                    <button id="close" class="close">Zamknij</button>
+                </div>
+            </div>
+        
+        
+            <!-- Produkty -->
+            <article class="product">
+                <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
+                <div class="product-info">
+                    <p class="product-name">Makowiec<br>
+                        <label for="sklad-checkbox" class="sklad-label">Skład</label>
+                        <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
+                    </p>        
+                    <p class="product-price">30 zł</p>
                 </div>
             </article>
             <div id="sklad" class="sklad hidden">
@@ -106,11 +70,11 @@
             <article class="product">
                 <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
                 <div class="product-info">
-                    <p class="product-name">Bułka bez glutenu<br>
+                    <p class="product-name">Sernik<br>
                         <label for="sklad-checkbox" class="sklad-label">Skład</label>
                         <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
                     </p>        
-                    <p class="product-price">2 zł</p>
+                    <p class="product-price">30 zł</p>
                 </div>
             </article>
             <div id="sklad" class="sklad hidden">
@@ -125,11 +89,11 @@
             <article class="product">
                 <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
                 <div class="product-info">
-                    <p class="product-name">Bułka fitness<br>
+                    <p class="product-name">Piernik<br>
                         <label for="sklad-checkbox" class="sklad-label">Skład</label>
                         <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
                     </p>        
-                    <p class="product-price">2 zł</p>
+                    <p class="product-price">30 zł</p>
                 </div>
             </article>
             <div id="sklad" class="sklad hidden">
@@ -144,11 +108,11 @@
             <article class="product">
                 <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
                 <div class="product-info">
-                    <p class="product-name">Bułka z pestkami dyni<br>
+                    <p class="product-name">Szarlotka<br>
                         <label for="sklad-checkbox" class="sklad-label">Skład</label>
                         <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
                     </p>        
-                    <p class="product-price">2 zł</p>
+                    <p class="product-price">30 zł</p>
                 </div>
             </article>
             <div id="sklad" class="sklad hidden">
@@ -160,62 +124,7 @@
             </div>
         </div>
     </section>
-
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h4>Nasze lokale</h4>
-                <div class="lokal">
-                    <h5>Piekarnia u Julek - Stare Miasto</h5>
-                    <p>Adres: ul. Floriańska 5, 31-019 Kraków<br>
-                    Telefon: +48 123 456 789<br>
-                    Email: staremiasto@piekarniaujulek.pl</p>
-                </div>
-                <div class="lokal">
-                    <h5>Piekarnia u Julek - Kazimierz</h5>
-                    <p>Adres: ul. Szeroka 10, 31-053 Kraków<br>
-                    Telefon: +48 987 654 321<br>
-                    Email: kazimierz@piekarniaujulek.pl</p>
-                </div>
-                <div class="lokal">
-                    <h5>Piekarnia u Julek - Nowa Huta</h5>
-                    <p>Adres: os. Centrum C 5, 31-931 Kraków<br>
-                    Telefon: +48 321 654 987<br>
-                    Email: nowahuta@piekarniaujulek.pl</p>
-                </div>
-            </div>
-            <div class="footer-column">
-                <div class="footer-subcolumn">
-                    <h4>Produkty</h4>
-                    <ul>
-                        <li>Wyroby piekarnicze</li>
-                        <ul class="sub-list">
-                            <li><a href="Chleby.html">Chleb</a></li>
-                            <li><a href="Bułki.html">Bułki</a></li>
-                        </ul>
-                        <li style="margin-top: 10px;">Wyroby cukiernicze</li>
-                        <ul class="sub-list">
-                            <li><a href="Drożdżówki.html">Drożdżówki</a></li>
-                            <li><a href="Ciasta.html">Ciasta</a></li>
-                            <li><a href="Ciasteczka.html">Ciasteczka</a></li>
-                        </ul>
-                    </ul>
-                </div>
-                <div class="footer-subcolumn">
-                    <h4>Nasza piekarnia</h4>
-                    <ul>
-                        <li><a href="o nas.html">O nas</a></li>
-                        <li><a href="Kontakt.html">Kontakt</a></li>
-                        <li><a href="regulamin.html">Regulamin zamówień online</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 Piekarnia u Julek. Wszystkie prawa zastrzeżone.</p>
-        </div>
-    </footer>
-
+   
     <script>
         const skladCheckbox = document.getElementById('sklad-checkbox');
         const skladModal = document.getElementById('sklad');
@@ -234,6 +143,3 @@
             skladCheckbox.checked = false; 
         });
     </script>
-
-</body>
-</html>

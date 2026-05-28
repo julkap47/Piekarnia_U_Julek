@@ -1,8 +1,9 @@
 /* Reset stylów */
-body, h3, h4, nav a, footer, section, button {
+body, h3, h4, nav a, footer, section, button, header {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-size: 115%; /* Tutaj powiększyłam cąły teskt*/
 }
 
 /* Ogólne style */
@@ -18,12 +19,13 @@ body {
 header {
     background-color:#0f0d0b; 
     color: #DCD7C9; 
-    padding: 10px 200px;
-    text-align: left
+    padding: 10px 250px;
+    text-align: left;
+    font-size: 2.0em; /* tutaj zmienmy wielkośc fontu*/
+
 }
 
 header h3 {
-    font-size: 2rem;
     font-weight: bold;
     letter-spacing: 2px;
 }
@@ -86,9 +88,9 @@ header h3 {
 nav a {
     color: #F3E9DC;
     text-decoration: none;
-    font-size: 1.25rem;
     margin-right: auto;
     margin-left: 7%;
+    font-size: 1.4em; /* Tutaj zmienmy wielkośc fontu w menu */
     
 }
 
@@ -96,10 +98,7 @@ nav a:hover {
     color:  #c78b5b; 
 }
 
-.active{
-    
-    color:  #c78b5b; 
-}
+
 
 
 
