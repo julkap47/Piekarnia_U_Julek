@@ -1,5 +1,27 @@
 
-   
+   <?php
+$komunikat = "";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    $email = trim($_POST["email"] ?? "");
+    $wiadomosc = trim($_POST["message"] ?? "");
+
+    if ($email !== "" && $wiadomosc !== "") {
+        $sql = "INSERT INTO wspolpraca (email, wiadomosc) VALUES (?, ?)";
+
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("ss", $email, $wiadomosc);
+
+        if ($stmt->execute()) {
+            $komunikat = "Dziękujemy! Twoja wiadomość została zapisana.";
+        } else {
+            $komunikat = "Wystąpił błąd podczas zapisywania wiadomości.";
+        }
+    } else {
+        $komunikat = "Uzupełnij wszystkie pola formularza.";
+    }
+}
+?>
     <section class="godziny">
         <p>Pn - Pt - 7:00 - 19:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
         <p>Sb - 8:00 - 15:00&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
@@ -70,7 +92,12 @@
                 poszukuje możliwości współpracy z innymi firmami, instytucjami oraz organizacjami. Jeśli prowadzisz restaurację, 
                 kawiarnię, hotel lub inną działalność gastronomiczną i chciałbyś wprowadzić nasze wypieki do swojej oferty, 
                 serdecznie zapraszamy do kontaktu. skontaktuj się z nami poprzez poniższy formularz.</p>
-            <form id="contact-form">
+            <?php if (!empty($komunikat)): ?>
+                <p style="color: green; font-weight: bold;">
+                    <?php echo htmlspecialchars($komunikat); ?>
+                </p>
+            <?php endif; ?>
+                <form id="contact-form" method="POST" action="">
                 <label for="email">Twój adres email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="message">Twoja wiadomość:</label>

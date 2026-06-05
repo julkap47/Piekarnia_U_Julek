@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    require_once 'db_connect.php';
+?>
 <?php 
 $page = $_GET["page"] ?? 'landing_page';
 
