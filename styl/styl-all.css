@@ -80,8 +80,9 @@ header h3 {
 /*Domek*/
 .Start {
     margin-top: 5px;
+    margin-left: 20px;
     height: 35px;
-    width: 35x;
+    width: 35px;
 } 
 
 /*poszczegolne kategorie z menu*/
@@ -136,7 +137,7 @@ nav a:hover {
     border-radius: 50%;
     overflow: hidden;
     background-color: #543A14;
-    margin-left: -20px;
+    margin-left: -10px;
     display: flex;
     z-index: 1000;
 }
@@ -304,4 +305,79 @@ footer {
     .menu-toggle:checked + .hamburger span:nth-child(3) {
         transform: rotate(-45deg) translate(12px, -12px); 
     }
+}
+/* poprawa menu */
+.menu_bar {
+    top: 0 !important;
+    min-height: 80px !important;
+    height: auto !important;
+    padding-left: 1% !important;
+    padding-right: 1% !important;
+}
+
+.menu-links {
+    gap: 20px !important;
+    justify-content: center !important;
+}
+
+nav a {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    font-size: 1.05em !important;
+    white-space: nowrap !important;
+}
+
+.Start {
+    width: 35px !important;
+    height: 35px !important;
+}
+
+.order-container {
+    height: 80px !important;
+    width: 190px !important;
+    padding-left: 0 !important;
+    border-radius: 0 !important;
+    transform: none !important;
+}
+
+.order-wrapper {
+    height: 80px !important;
+}
+
+/* centrowanie logowania i rejestracji */
+main > form:not(#order-form):not(#contact-form) {
+    width: 450px !important;
+    max-width: 90% !important;
+    margin: 50px auto !important;
+    padding: 35px !important;
+    background-color: #F3E9DC !important;
+    color: black !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+}
+
+main > form:not(#order-form):not(#contact-form) input {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 10px !important;
+    margin-bottom: 15px !important;
+}
+/* panel admin */
+
+main h1 {
+    margin-left: 50px;
+}
+
+main h2 {
+    margin-left: 50px;
+    text-align: left;
+}
+
+main table {
+    margin-left: 50px;
+    margin-right: auto;
+}
+
+main .dodaj-user {
+    margin-left: 50px;
 }

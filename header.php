@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
         <title><?php echo $pageTitle; ?></title>
 
-    <link rel="stylesheet" href="styl/styl-all.css">
+    <link rel="stylesheet" href="styl/styl-all.css?v=10">
     <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
     <?php
     if ($page === 'Chleby' || $page === 'Bulki' || $page === 'Drozdzowki' || $page === 'Ciasta' || $page === 'Ciasteczka') {
@@ -47,6 +47,15 @@
             <a href="Drozdzowki">Wyroby Cukiernicze</a>
             <a href="Chleby" class="active">Wyroby Piekarnicze</a>
             <a href="Kontakt">Kontakt</a>
+            <?php if (isset($_SESSION['role']) && (int)$_SESSION['role'] === 1): ?>
+                <a href="admin">Panel admin</a>
+            <?php endif; ?>
+            <?php if(isset($_SESSION['user_id'])): ?>
+                <a href="logout">Wyloguj</a>
+            <?php else: ?>
+                <a href="logowanie">Logowanie</a>
+                <a href="rejestracja">Rejestracja</a>
+            <?php endif; ?>
             <div class="order-wrapper">
                 <div class="order-container">
                     <a href="Zamowienia" class="order-button">Zamów online</a>
