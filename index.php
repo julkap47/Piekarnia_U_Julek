@@ -86,6 +86,12 @@ switch( $page ){
     case 'status_zamowienia':
         $pageTitle = "Zmiana statusu zamówienia - Piekarnia u Julek";
         break;
+    case 'admin_produkt_edit':
+        $pageTitle = "Produkty - Panel admina";
+    case 'admin_produkt_delete':
+        $pageTitle = "Produkty - Panel admina";
+        break;
+
     
     default:
         $pageTitle = "404 - Strona nie odneloziona";

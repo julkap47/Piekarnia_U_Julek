@@ -11,6 +11,6 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $id);
 $stmt->execute();
 
-header("Location: index.php?page=admin&kom=Zamówienie zostało usunięte.");
+header("Location: admin&kom=Zamówienie zostało usunięte.");
 exit();
 ?>

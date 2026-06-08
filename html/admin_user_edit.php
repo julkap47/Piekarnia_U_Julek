@@ -1,7 +1,7 @@
 <?php
 require_once 'db_connect.php';
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || (int)$_SESSION['role'] !== 1) {
-    header("Location: index.php?page=home");
+    header("Location: page=home");
     exit();
 }
 $kom = "";
@@ -120,5 +120,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <option value="1">Administrator</option>
     </select><br><br>
     <input type="submit" value="Zapisz zmiany"><br><br>
-    <a href="index.php?page=admin">Anuluj</a>
+    <a href="page=admin">Anuluj</a>
 </form>

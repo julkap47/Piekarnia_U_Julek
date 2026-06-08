@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['imie'] = $user['first_name'];
                     $_SESSION['role']= (int)$user['role'];
 
-                    header("Location: index.php?page=landing_page");
+                    header("Location: landing_page");
                     exit();
                 } else {
                     $kom = "Błędne hasło.";
@@ -48,8 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<h1>Zaloguj się</h1>
+<div style="text-align: center;">
 
+<h1>Zaloguj się</h1>
+</div>
 
 <form action="" method="POST">
     <label>Wpisz adres:</label><br><br>

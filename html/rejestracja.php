@@ -46,13 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<h1>Zarejestruj się</h1>
+<div style="text-align: center;">
+    <h1>Zarejestruj się</h1>
 
-<?php if (!empty($kom)): ?>
-    <div class="komunikat <?php echo ($kom === 'Rejestracja zakończyła się sukcesem!') ? 'sukces' : 'blad'; ?>">
-        <?php echo htmlspecialchars($kom); ?>
-    </div><br>
-<?php endif; ?>
+    <?php if (!empty($kom)): ?>
+        <div class="komunikat <?php echo ($kom === 'Rejestracja zakończyła się sukcesem!') ? 'sukces' : 'blad'; ?>">
+            <?php echo htmlspecialchars($kom); ?>
+        </div><br>
+    <?php endif; ?>
+</div>
 
 <form action="" method="POST">
     <label>Imię:</label><br><br>
