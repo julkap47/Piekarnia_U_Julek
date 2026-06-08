@@ -68,22 +68,22 @@ $wiadomosci = $conn->query("
             <td><?php echo htmlspecialchars($row["data_zamowienia"]); ?></td>
             <td>
 
-    <a href="index.php?page=status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Przyjęte do realizacji'); ?>">
+    <a href="status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Przyjęte do realizacji'); ?>">
     Przyjęte
 </a>
 
 |
 
-<a href="index.php?page=status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Gotowe do odbioru'); ?>">
+<a href="status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Gotowe do odbioru'); ?>">
     Gotowe
 </a>
 
 |
 
-<a href="index.php?page=status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Odebrane'); ?>">
+<a href="status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Odebrane'); ?>">
     Odebrane
 </a>
-<a href="index.php?page=status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Usuń'); ?>">
+<a href="status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Usuń'); ?>">
     Usuń
 </a>
 
@@ -112,7 +112,7 @@ $wiadomosci = $conn->query("
             <td><?php echo htmlspecialchars($row["wiadomosc"]); ?></td>
             <td><?php echo htmlspecialchars($row["data_wyslania"]); ?></td>
             <td>
-                <a href="index.php?page=usun_wiadomosc&id=<?php echo $row["id"]; ?>"
+                <a href="usun_wiadomosc&id=<?php echo $row["id"]; ?>"
                    onclick="return confirm('Czy na pewno usunąć tę wiadomość?');">
                     Usuń
                 </a>
@@ -123,8 +123,8 @@ $wiadomosci = $conn->query("
 <h2>Użytkownicy</h2>
 
 <div class="admin-actions">
-    <a href="index.php?page=admin_user_add">Dodaj użytkownika</a>
-    <a href="index.php?page=admin_produkty">Zarządzaj produktami</a>
+    <a href="admin_user_add">Dodaj użytkownika</a>
+    <a href="admin_produkty">Zarządzaj produktami</a>
 </div>
 <br><br>
 
@@ -150,9 +150,9 @@ $wiadomosci = $conn->query("
             </td>
             <td><?php echo htmlspecialchars($user['registration_date']); ?></td>
             <td>
-                <a href="index.php?page=admin_user_edit&id=<?php echo $user['user_id']; ?>">Edytuj</a>
+                <a href="admin_user_edit&id=<?php echo $user['user_id']; ?>">Edytuj</a>
                 |
-                <a href="index.php?page=admin_user_delete&id=<?php echo $user['user_id']; ?>"
+                <a href="admin_user_delete&id=<?php echo $user['user_id']; ?>"
                    onclick="return confirm('Czy na pewno chcesz usunąć tego użytkownika?');">
                    Usuń
                 </a>

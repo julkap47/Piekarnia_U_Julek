@@ -1,146 +1,68 @@
+<!-- Menu kategorii -->
+<section class="link-section">
+    <p>
+        <a href="Chleby" class="active">Chleby</a> |
+        <a href="Bulki">Bułki</a>
+    </p>
+</section>
 
+<?php
+$kategoria = "Chleby";
 
-    <!-- Dodaj linki na górze przed produktami -->
-    <section class="link-section">
-        <p><a href="Chleby">Chleby</a> | <a href="Bulki">Bułki</a> </p>
-    </section>
+$sql = "SELECT * FROM produkty WHERE kategoria = ? ORDER BY data_dodania DESC";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $kategoria);
+$stmt->execute();
+$produkty = $stmt->get_result();
+?>
 
-    <section class="product-section">
-        <div class="product-grid">
-            <!-- Produkty -->
+<section class="product-section">
+    <div class="product-grid">
+
+        <?php while ($produkt = $produkty->fetch_assoc()): ?>
             <article class="product">
-                <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
+                <img 
+                    src="uploads/<?= htmlspecialchars($produkt['obrazek'] ?: 'brak-zdjecia.jpg') ?>" 
+                    alt="<?= htmlspecialchars($produkt['nazwa']) ?>"
+                >
+
                 <div class="product-info">
-                    <p class="product-name">Chleb pszenny<br>
-                        <label for="sklad-checkbox" class="sklad-label">Skład</label>
-                        <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
-                    </p>        
-                    <p class="product-price">8 zł</p>
+                    <p class="product-name">
+                        <?= htmlspecialchars($produkt['nazwa']) ?>
+                    </p>
+
+                    <details style="margin-top:10px; margin-bottom:10px;">
+                        <summary style="
+                            cursor:pointer;
+                            display:inline-block;
+                            padding:8px 15px;
+                            background:#543A14;
+                            color:white;
+                            border-radius:5px;
+                            font-weight:bold;
+                            list-style:none;
+                        ">
+                            Skład
+                        </summary>
+
+                        <div style="
+                            margin-top:10px;
+                            padding:10px;
+                            background:#f5f5f5;
+                            border-radius:5px;
+                            color:#333;
+                            max-width:250px;
+                        ">
+                            <?= nl2br(htmlspecialchars($produkt['opis'])) ?>
+                        </div>
+                    </details>
+
+                    <p class="product-price">
+                        <?= htmlspecialchars($produkt['cena']) ?> zł
+                    </p>
                 </div>
             </article>
-            <div id="sklad" class="sklad hidden">
-                <div class="sklad-content">
-                    <h2>Skład produktu</h2>
-                    <p>Mąka, ser biały, cukier, drożdże, mleko...</p>
-                    <button id="close" class="close">Zamknij</button>
-                </div>
-            </div>
-        
-        
-            <!-- Produkty -->
-            <article class="product">
-                <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
-                <div class="product-info">
-                    <p class="product-name">Chleb razowy<br>
-                        <label for="sklad-checkbox" class="sklad-label">Skład</label>
-                        <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
-                    </p>        
-                    <p class="product-price">8 zł</p>
-                </div>
-            </article>
-            <div id="sklad" class="sklad hidden">
-                <div class="sklad-content">
-                    <h2>Skład produktu</h2>
-                    <p>Mąka, ser biały, cukier, drożdże, mleko...</p>
-                    <button id="close" class="close">Zamknij</button>
-                </div>
-            </div>
-        
-        
-            <!-- Produkty -->
-            <article class="product">
-                <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
-                <div class="product-info">
-                    <p class="product-name">Chleb IG<br>
-                        <label for="sklad-checkbox" class="sklad-label">Skład</label>
-                        <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
-                    </p>        
-                    <p class="product-price">8 zł</p>
-                </div>
-            </article>
-            <div id="sklad" class="sklad hidden">
-                <div class="sklad-content">
-                    <h2>Skład produktu</h2>
-                    <p>Mąka, ser biały, cukier, drożdże, mleko...</p>
-                    <button id="close" class="close">Zamknij</button>
-                </div>
-            </div>
-        
-            <!-- Produkty -->
-            <article class="product">
-                <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
-                <div class="product-info">
-                    <p class="product-name">Chleb bez glutenu<br>
-                        <label for="sklad-checkbox" class="sklad-label">Skład</label>
-                        <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
-                    </p>        
-                    <p class="product-price">8 zł</p>
-                </div>
-            </article>
-            <div id="sklad" class="sklad hidden">
-                <div class="sklad-content">
-                    <h2>Skład produktu</h2>
-                    <p>Mąka, ser biały, cukier, drożdże, mleko...</p>
-                    <button id="close" class="close">Zamknij</button>
-                </div>
-            </div>
-        
-            <!-- Produkty -->
-            <article class="product">
-                <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
-                <div class="product-info">
-                    <p class="product-name">Chleb z suszonymi pomidorami<br>
-                        <label for="sklad-checkbox" class="sklad-label">Skład</label>
-                        <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
-                    </p>        
-                    <p class="product-price">8 zł</p>
-                </div>
-            </article>
-            <div id="sklad" class="sklad hidden">
-                <div class="sklad-content">
-                    <h2>Skład produktu</h2>
-                    <p>Mąka, ser biały, cukier, drożdże, mleko...</p>
-                    <button id="close" class="close">Zamknij</button>
-                </div>
-            </div>
-        
-            <!-- Produkty -->
-            <article class="product">
-                <img src="img/zdj1.jpg" alt="Drożdżówka z serem">
-                <div class="product-info">
-                    <p class="product-name">Chleb fitness<br>
-                        <label for="sklad-checkbox" class="sklad-label">Skład</label>
-                        <input type="checkbox" id="sklad-checkbox" class="sklad" style="display: none;">
-                    </p>        
-                    <p class="product-price">8 zł</p>
-                </div>
-            </article>
-            <div id="sklad" class="sklad hidden">
-                <div class="sklad-content">
-                    <h2>Skład produktu</h2>
-                    <p>Mąka, ser biały, cukier, drożdże, mleko...</p>
-                    <button id="close" class="close">Zamknij</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <script>
-        const skladCheckbox = document.getElementById('sklad-checkbox');
-        const skladModal = document.getElementById('sklad');
-        const closeModalButton = document.getElementById('close');
+        <?php endwhile; ?>
 
-        // Obsługa kliknięcia na checkbox
-        skladCheckbox.addEventListener('change', () => {
-            if (skladCheckbox.checked) {
-                skladModal.classList.remove('hidden'); // Pokaż okno
-            }
-        });
-
-        // Obsługa kliknięcia na przycisk zamykający
-        closeModalButton.addEventListener('click', () => {
-            skladModal.classList.add('hidden'); 
-            skladCheckbox.checked = false; 
-        });
-    </script>
-
+    </div>
+</section>

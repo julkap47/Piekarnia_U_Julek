@@ -171,7 +171,7 @@ if ($stmt->execute()) {
 document.addEventListener("DOMContentLoaded", function () {
     const addProductButton = document.getElementById("add-product");
     const productSelect = document.getElementById("product-1");
-    const quantityInput = document.getElementById("quantity-1");
+    const quantityInput = document.getElementById("quantity-1"); 
     const lista = document.getElementById("lista");
     const summaryButton = document.getElementById("summary-button");
     const summary = document.getElementById("summary");

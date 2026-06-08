@@ -1,7 +1,7 @@
 <?php
 
 if (!isset($_SESSION['role']) || (int)$_SESSION['role'] !== 1) {
-    header("Location: index.php?page=landing_page");
+    header("Location: landing_page");
     exit();
 }
 
@@ -25,6 +25,6 @@ if ($id > 0 && in_array($status, $dozwolone)) {
     $stmt->execute();
 }
 
-header("Location: index.php?page=admin");
+header("Location: admin");
 exit();
 ?>
