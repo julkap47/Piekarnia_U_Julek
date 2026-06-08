@@ -83,6 +83,9 @@ $wiadomosci = $conn->query("
 <a href="status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Odebrane'); ?>">
     Odebrane
 </a>
+
+|
+
 <a href="status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Usuń'); ?>">
     Usuń
 </a>
