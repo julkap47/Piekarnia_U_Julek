@@ -73,6 +73,19 @@ switch( $page ){
     case 'admin_user_delete':
          $pageTitle = "Usuwanie użytkownika przez admina - Piekarnia u Julek";
         break;
+    case 'admin_produkty':
+        $pageTitle = "Produkty - Panel admina";
+        break;
+
+    case 'admin_produkt_add':
+        $pageTitle = "Dodaj produkt";
+        break;
+    case 'moje_zamowienia':
+        $pageTitle = "Moje zamówienia - Piekarnia u Julek";
+        break;
+    case 'status_zamowienia':
+        $pageTitle = "Zmiana statusu zamówienia - Piekarnia u Julek";
+        break;
     
     default:
         $pageTitle = "404 - Strona nie odneloziona";

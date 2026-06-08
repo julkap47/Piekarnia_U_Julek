@@ -362,22 +362,3 @@ main > form:not(#order-form):not(#contact-form) input {
     padding: 10px !important;
     margin-bottom: 15px !important;
 }
-/* panel admin */
-
-main h1 {
-    margin-left: 50px;
-}
-
-main h2 {
-    margin-left: 50px;
-    text-align: left;
-}
-
-main table {
-    margin-left: 50px;
-    margin-right: auto;
-}
-
-main .dodaj-user {
-    margin-left: 50px;
-}

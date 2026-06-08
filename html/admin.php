@@ -19,7 +19,7 @@ $result = $conn->query($sql);
 $kom = $_GET["kom"] ?? "";
 
 $zamowienia = $conn->query("
-    SELECT id, imie_nazwisko, email, telefon, lokalizacja, produkty, kwota, data_zamowienia
+    SELECT id, imie_nazwisko, email, telefon, lokalizacja, produkty, kwota, status_zamowienia,data_zamowienia
     FROM zamowienia
     ORDER BY data_zamowienia DESC
 ");
@@ -50,6 +50,7 @@ $wiadomosci = $conn->query("
         <th>Lokalizacja</th>
         <th>Produkty</th>
         <th>Kwota</th>
+        <th>Status</th>
         <th>Data</th>
         <th>Akcje</th>
     </tr>
@@ -63,13 +64,30 @@ $wiadomosci = $conn->query("
             <td><?php echo htmlspecialchars($row["lokalizacja"]); ?></td>
             <td><?php echo htmlspecialchars($row["produkty"]); ?></td>
             <td><?php echo htmlspecialchars($row["kwota"]); ?> zł</td>
+            <td><?php echo htmlspecialchars($row["status_zamowienia"]); ?></td>
             <td><?php echo htmlspecialchars($row["data_zamowienia"]); ?></td>
             <td>
-                <a href="index.php?page=usun_zamowienie&id=<?php echo $row["id"]; ?>"
-                   onclick="return confirm('Czy na pewno usunąć to zamówienie?');">
-                    Usuń
-                </a>
-            </td>
+
+    <a href="index.php?page=status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Przyjęte do realizacji'); ?>">
+    Przyjęte
+</a>
+
+|
+
+<a href="index.php?page=status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Gotowe do odbioru'); ?>">
+    Gotowe
+</a>
+
+|
+
+<a href="index.php?page=status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Odebrane'); ?>">
+    Odebrane
+</a>
+<a href="index.php?page=status_zamowienia&id=<?php echo $row['id']; ?>&status=<?php echo urlencode('Usuń'); ?>">
+    Usuń
+</a>
+
+</td>
         </tr>
     <?php endwhile; ?>
 </table>
@@ -104,10 +122,10 @@ $wiadomosci = $conn->query("
 </table>
 <h2>Użytkownicy</h2>
 
-<a href="index.php?page=admin_user_add" class="dodaj-user">
-    Dodaj użytkownika
-</a>
-
+<div class="admin-actions">
+    <a href="index.php?page=admin_user_add">Dodaj użytkownika</a>
+    <a href="index.php?page=admin_produkty">Zarządzaj produktami</a>
+</div>
 <br><br>
 
 <table border="1" cellpadding="8">

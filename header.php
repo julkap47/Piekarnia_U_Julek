@@ -47,11 +47,16 @@
             <a href="Drozdzowki">Wyroby Cukiernicze</a>
             <a href="Chleby" class="active">Wyroby Piekarnicze</a>
             <a href="Kontakt">Kontakt</a>
-            <?php if (isset($_SESSION['role']) && (int)$_SESSION['role'] === 1): ?>
-                <a href="admin">Panel admin</a>
-            <?php endif; ?>
+            
             <?php if(isset($_SESSION['user_id'])): ?>
+                <?php if (isset($_SESSION['role']) && (int)$_SESSION['role'] === 1): ?>
+                    <a href="admin">Panel admin</a>
+                <?php else: ?>
+                    <a href="moje_zamowienia">Moje zamówienia</a>
+                <?php endif; ?>
+
                 <a href="logout">Wyloguj</a>
+
             <?php else: ?>
                 <a href="logowanie">Logowanie</a>
                 <a href="rejestracja">Rejestracja</a>

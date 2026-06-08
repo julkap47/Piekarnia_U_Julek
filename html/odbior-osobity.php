@@ -10,18 +10,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $kwota = floatval($_POST["kwota"] ?? 0);
 
     if ($lokalizacja && $imie && $email && $telefon && $produkty) {
-        $sql = "INSERT INTO zamowienia 
-                (imie_nazwisko, email, telefon, lokalizacja, produkty, kwota)
-                VALUES (?, ?, ?, ?, ?, ?)";
+       $user_id = $_SESSION['user_id'] ?? null;
 
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sssssd", $imie, $email, $telefon, $lokalizacja, $produkty, $kwota);
+    $user_id = $_SESSION['user_id'] ?? null;
 
-        if ($stmt->execute()) {
-            $komunikat = "Dziękujemy za zamówienie! Zamówienie zostało zapisane.";
-        } else {
-            $komunikat = "Wystąpił błąd podczas zapisywania zamówienia.";
-        }
+$sql = "INSERT INTO zamowienia 
+        (user_id, imie_nazwisko, email, telefon, lokalizacja, produkty, kwota)
+        VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+$stmt = $conn->prepare($sql);
+
+$stmt->bind_param(
+    "isssssd",
+    $user_id,
+    $imie,
+    $email,
+    $telefon,
+    $lokalizacja,
+    $produkty,
+    $kwota
+);
+
+if ($stmt->execute()) {
+    $komunikat = "Dziękujemy za zamówienie! Zamówienie zostało zapisane.";
+} else {
+    $komunikat = "Wystąpił błąd podczas zapisywania zamówienia.";
+}
     } else {
         $komunikat = "Uzupełnij wszystkie wymagane pola i dodaj produkt.";
     }
