@@ -57,11 +57,76 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
+<style>
+    h1 {
+        text-align: center;
+        margin: 30px 0;
+        color: #F3E9DC;
+    }
 
+    .product-admin-form {
+        width: 500px;
+        max-width: 90%;
+        margin: 30px auto;
+        padding: 30px;
+        background-color: #F3E9DC;
+        color: #161b1d;
+        border-radius: 12px;
+        box-sizing: border-box;
+    }
+
+    .product-admin-form label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 6px;
+        font-weight: bold;
+    }
+
+    .product-admin-form input,
+    .product-admin-form select,
+    .product-admin-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #876245;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-family: inherit;
+    }
+
+    .product-admin-form textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .product-admin-form input[type="submit"] {
+        margin-top: 25px;
+        background-color: #876245;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    .product-admin-form input[type="submit"]:hover {
+        background-color: #543A14;
+    }
+
+    .komunikat {
+        width: 500px;
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 12px;
+        background-color: #c0392b;
+        color: white;
+        border-radius: 6px;
+        text-align: center;
+    }
+</style>
 <h1>Dodaj produkt</h1>
 
 <?php if ($kom): ?>
-    <p><?= htmlspecialchars($kom) ?></p>
+    <p class="komunikat"><?= htmlspecialchars($kom) ?></p>
 <?php endif; ?>
 
 <form method="POST" enctype="multipart/form-data" class="product-admin-form">
@@ -76,6 +141,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <option value="Ciasteczka">Ciasteczka</option>
         <option value="Drożdżówki">Drożdżówki</option>
     </select>
+    <br>
 
     <label>Cena:</label>
     <input type="number" name="cena" step="0.01" required>

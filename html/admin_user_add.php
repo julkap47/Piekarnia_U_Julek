@@ -48,7 +48,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+<style>
+    .stat-btn {
+    display: inline-block;
+    background: #876245;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
 
+    .stat-btn:hover {
+    background: #7e663f;
+}
+    .sub{
+    display: inline-block;
+    background: #876245;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 6px;
+    margin-right: 10px;
+    transition: 0.3s;
+    }
+
+</style>
 <h1>Dodaj nowego użytkownika</h1>
 
 <?php if (!empty($kom)): ?>
@@ -76,5 +102,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <option value="1">Administrator</option>
     </select><br><br>
     <input type="submit" value="Utwórz konto użytkownika"><br><br>
-    <a href="admin">Anuluj i wróć</a>
+    <a class="stat-btn" href="admin">Anuluj i wróć</a>
 </form>

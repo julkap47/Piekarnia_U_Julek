@@ -6,10 +6,21 @@ if (!isset($_SESSION['role']) || (int)$_SESSION['role'] !== 1) {
 
 $produkty = $conn->query("SELECT * FROM produkty ORDER BY data_dodania DESC");
 ?>
+<style>
+    .add-btn{
+        display: inline-block;
+        padding: 6px 12px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: white !important;
+        font-weight: bold;
+        text-decoration: underline;
+    }
 
+</style>
 <h1>Produkty</h1>
 
-<a href="admin_produkt_add">Dodaj produkt</a>
+<a class="add-btn" href="admin_produkt_add">Dodaj produkt</a>
 
 <table border="1" cellpadding="8">
     <tr>
@@ -39,9 +50,9 @@ $produkty = $conn->query("SELECT * FROM produkty ORDER BY data_dodania DESC");
             <td><?= htmlspecialchars($produkt['cena']) ?> zł</td>
             <td><?= nl2br(htmlspecialchars($produkt['opis'])) ?></td>
             <td>
-                <a href="admin_produkt_edit?id=<?= $produkt['id'] ?>">Edytuj</a>
+                <a class="add-btn" href="admin_produkt_edit?id=<?= $produkt['id'] ?>">Edytuj</a>
                 |
-                <a href="admin_produkt_delete?id=<?= $produkt['id'] ?>"
+                <a class="add-btn" href="admin_produkt_delete?id=<?= $produkt['id'] ?>"
                 onclick="return confirm('Czy na pewno chcesz usunąć ten produkt?');">
                     Usuń
                 </a>
